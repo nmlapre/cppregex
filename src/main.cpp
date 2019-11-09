@@ -75,7 +75,7 @@ R"(
                            sub-expressions (?:expr).
     --optimize           Instructs the regular expression engine to make matching faster, with the potential
                            cost of making construction slower.
-    --collage            Character ranges of the form "[a-b]" will be locale sensitive.
+    --collate            Character ranges of the form "[a-b]" will be locale sensitive.
     --multiline          Specifies that ^ shall match the beginning of a line and $ shall match the end of a line,
                            if the ECMAScript engine is selected.
 )";
