@@ -12,7 +12,7 @@
 // Regex_helper is a class intended to do the heavy lifting of std::regex algorithms.
 // Given the target text sequence, the text of the regex, and the Regex_options, the class
 // constructor reads the options and executes the regex as specified by the arguments.
-// The class gives access to its properties directly if needed. The pretty_print funciton
+// The class gives access to its properties directly if needed. The pretty_print function
 // writes a JSON representation of the query and results to standard output by calling
 // the relevant operator<< functions on the members of Regex_helper, then parsing and
 // serializing via nlohmann's C++ json library, which handles indentation and ensures
@@ -30,7 +30,7 @@ public:
   Regex_helper() = delete;
   Regex_helper(std::string   && text,
                std::string   && regex,
-               Regex_options && regex_options);
+               Regex_options && regex_options = Regex_options());
 
   std::string              const& text()          const { return _text;          };
   std::string              const& regex()         const { return _regex;         };
