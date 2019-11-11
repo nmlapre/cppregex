@@ -14,6 +14,10 @@ struct Submatch
 
   friend std::ostream& operator<<(std::ostream& os, Submatch const& submatch);
 
+  size_t             length()   const { return _length; }
+  size_t             position() const { return _position; }
+  std::string const& text()     const { return _text; }
+
 private:
   size_t      _length   {0};
   size_t      _position {0};
@@ -29,6 +33,12 @@ struct Match
   Match(std::smatch&& match, std::string&& format_string = "");
 
   friend std::ostream& operator<<(std::ostream& os, Match const& match);
+
+  std::string           const& formatted_string()        const { return _formatted_string; }
+  bool                         match_successful()        const { return _match_successful; }
+  size_t                       max_possible_submatches() const { return _max_possible_submatches; }
+  size_t                       submatch_count()          const { return _submatch_count; }
+  std::vector<Submatch> const& submatches()              const { return _submatches; }
 
 private:
   std::string           _formatted_string        {""};

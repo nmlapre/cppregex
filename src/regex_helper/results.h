@@ -31,6 +31,8 @@ struct Match_results : Results
 
   friend std::ostream& operator<<(std::ostream& os, Match_results const& match_results);
 
+  Match const& match() const { return _match; }
+
 private:
   Match _match {};
 
@@ -47,6 +49,9 @@ struct Search_results : Results
 
   friend std::ostream& operator<<(std::ostream& os, Search_results const& search_results);
 
+  size_t                    match_count() const { return _match_count; }
+  std::vector<Match> const& matches()     const { return _matches; }
+
 private:
   size_t             _match_count {0};
   std::vector<Match> _matches     {};
@@ -62,6 +67,8 @@ struct Replace_results : Results
   Replace_results(std::string&& replaced_text);
 
   friend std::ostream& operator<<(std::ostream& os, Replace_results const& replace_results);
+
+  std::string const& replaced_text() const { return _replaced_text; }
 
 private:
   std::string _replaced_text {""};
