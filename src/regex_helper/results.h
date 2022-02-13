@@ -11,6 +11,7 @@
 struct Results
 {
   Results() = delete;
+  virtual ~Results() = default;
   Results(Algorithm algorithm);
 
   Algorithm algorithm() const { return _algorithm; };
@@ -19,8 +20,6 @@ struct Results
 
 private:
   Algorithm _algorithm{Algorithm::match};
-
-  virtual void _dummy() { };
 };
 
 // Match_results are Results that have a single Match that may or may not be successful.
@@ -35,8 +34,6 @@ struct Match_results : Results
 
 private:
   Match _match {};
-
-  void _dummy() {};
 };
 
 // Search_results are Results with a std::vector of potential Matches.
@@ -55,8 +52,6 @@ struct Search_results : Results
 private:
   size_t             _match_count {0};
   std::vector<Match> _matches     {};
-
-  void _dummy() {};
 };
 
 // Replace_results are Results with a single piece of information: the target
@@ -72,8 +67,6 @@ struct Replace_results : Results
 
 private:
   std::string _replaced_text {""};
-
-  void _dummy() {};
 };
 
 #endif /* RESULTS_H */
