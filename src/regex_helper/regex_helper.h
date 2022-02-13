@@ -42,7 +42,7 @@ public:
 
   friend std::ostream& operator<<(std::ostream& os, Regex_helper const& regex_helper);
 
-private:  
+private:
   std::regex _construct_regex() const;
 
   // Helpers for each algorithm that call std::regex_match/search/replace and populate the results.

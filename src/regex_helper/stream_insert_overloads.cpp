@@ -143,7 +143,7 @@ std::ostream& operator<<(std::ostream& os, Match_options const& match_options)
   os << "\"format_sed\": "               << (match_options._format_sed        ? t : f)           << ",\n";
   os << "\"format_no_copy\": "           << (match_options._format_no_copy    ? t : f)           << ",\n";
   os << "\"format_first_only\": "        << (match_options._format_first_only ? t : f)           << ",\n";
-  os << "\"format_string\": "     << '"' << escape_for_json(match_options._format_string) << '"' << "\n"; 
+  os << "\"format_string\": "     << '"' << escape_for_json(match_options._format_string) << '"' << "\n";
   os << "}";
   return os;
 }
@@ -254,7 +254,7 @@ std::ostream& operator<<(std::ostream& os, Regex_helper const& regex_helper)
         break;
     }
   }
-  
+
   os << "\n";
   os << "}";
   return os;

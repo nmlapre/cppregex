@@ -23,7 +23,7 @@ R"(
   ================
 
       Only one option can be enabled at a time. The grammar option that appears last in the argument
-      list will be the grammar to use. 
+      list will be the grammar to use.
 
     --ecmascript         Use the Modified ECMAScript regular expression grammar. [Default]
     --extended           Use the extended POSIX regular expression grammar.

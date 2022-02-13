@@ -54,7 +54,7 @@ void Regex_helper::_execute_regex_search()
   auto match_flag_mask = _regex_options.match_flag_mask();
   auto format_string   = _regex_options.format_string();
 
-  auto regex_iterator_begin = std::sregex_iterator(text_begin, text_end, 
+  auto regex_iterator_begin = std::sregex_iterator(text_begin, text_end,
                                                    regex,
                                                    match_flag_mask);
 
@@ -71,7 +71,7 @@ void Regex_helper::_execute_regex_replace()
   auto regex           = _construct_regex();
   auto format_string   = _regex_options.format_string();
   auto match_flag_mask = _regex_options.match_flag_mask();
-  
+
   std::string replace_result = std::regex_replace(_text,
                                                   regex,
                                                   std::move(format_string),
@@ -84,7 +84,7 @@ void Regex_helper::_execute_regex_replace()
 // create a std::regex to use in the std::regex matching functions.
 std::regex Regex_helper::_construct_regex() const
 {
-  return std::regex(_regex, _regex_options.syntax_option_mask());  
+  return std::regex(_regex, _regex_options.syntax_option_mask());
 }
 
 // Given a std::sregex_iterator created from the target text sequence,
@@ -93,7 +93,7 @@ std::regex Regex_helper::_construct_regex() const
 std::vector<Match>
 Regex_helper::_get_matches_from_iterator(std::sregex_iterator begin,
                                          std::string          format_string) const
-{  
+{
   auto end = std::sregex_iterator();
   std::vector<Match> matches;
   matches.reserve(std::distance(begin, end));
@@ -109,7 +109,7 @@ Regex_helper::_get_matches_from_iterator(std::sregex_iterator begin,
 
 // Parse the command line arguments into a Regex_helper, and return it.
 // The following describes the structure of the parameters of the program:
-// 
+//
 // $ cppregex text regex [options...]
 //   argv[0]  [1]  [2]   [3...argc]
 //
