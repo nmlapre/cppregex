@@ -1,7 +1,13 @@
 # cppregex
 a cli tool for evaluating c++ std::regex expressions
 
----
+### Motivation
+People often avoid C++'s `<regex>` library due to complaints about performance and the size of generated code. However, you might find yourself in a situation where you have no choice. What if you want to quickly test how `std::regex` behaves, options and all, in a way that's simple to parse? As far as I know, there are no good tools dedicated to this, though there are plenty for other regex APIs.
+
+### Description
+This project contains a library that wraps all features of the `std::regex` API. It exposes these features in a CLI program as program arguments, and prints results in JSON for simple parsing. The ultimate goal is to make a simple web tool that helps people test `std::regex` even more easily.
+
+Here's the manual output by the program:
 
 ```
   Usage: $ cppregex text regex [options...]
